@@ -1,0 +1,356 @@
+@import "media-queries";
+@import "bases";
+@import "classes";
+@import "utils";
+
+body {
+  height: 100vh;
+  background: var(--greyish-black);
+}
+
+.background-container {
+  margin: 2rem;
+
+  @include xs {
+    display: none;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  aspect-ratio: 1/1;
+  background: var(--circle-color);
+  box-shadow: 0 0 10px var(--circle-color), 0 0 20px var(--circle-color),
+    0 0 30px var(--circle-color), 0 0 50px var(--circle-color);
+  border-radius: 50%;
+  animation: animate-circles 5s linear forwards;
+  z-index: -1; // Makes the lines always be in the back
+
+  &::before {
+    // This is the line that connects the circles to the bottom of the screen
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 25%;
+    width: 50%;
+    height: 100vh;
+    opacity: 0.5;
+    background: linear-gradient(to bottom, transparent, var(--circle-color));
+  }
+}
+
+@keyframes animate-circles {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(85vh);
+    opacity: 0;
+  }
+}
+
+input {
+  @extend %input;
+}
+
+.btn {
+  color: var(--almost-white);
+  font-family: var(--font-title);
+
+  /* Copied from _bases */
+  border: none;
+  outline: none;
+  font-size: 6rem;
+}
+
+.link-welcom {
+  font-size: 2rem;
+}
+
+.btn-primary {
+  background-color: var(--shrek-green);
+}
+
+.loginSquare {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-title);
+    color: var(--text);
+    color: white;
+  }
+  h3 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  button {
+    padding: 10px;
+    font-size: 1.6rem;
+    margin: 10px;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include xs {
+      flex-direction: column;
+    }
+    .hostSquare {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin: 2rem;
+      padding: 2rem;
+    }
+    .guestSquare {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin: 2rem;
+      padding: 2rem;
+    }
+  }
+}
+
+.homePage-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  p {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
+  h2 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+  }
+}
+
+.invite-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin: 2rem;
+  button {
+    margin-left: 2rem;
+    max-height: 4rem;
+    font-size: 2.5rem;
+  }
+}
+.numberVotes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.votingPage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.songInfo {
+  padding-top: 50px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.votingButton {
+  backdrop-filter: blur(25px);
+  // Move them to the right of their column
+  font-size: large;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.party-creation-table {
+  font-size: 2rem;
+  .column-title {
+    min-height: 4rem;
+  }
+  .left-column {
+    align-self: center;
+    padding-left: 3rem;
+    vertical-align: middle;
+    @include xs {
+      padding-left: 5px;
+    }
+  }
+  .right-column {
+    text-align: right;
+    padding-right: 3rem;
+    vertical-align: middle;
+    @include xs {
+      padding-right: 5px;
+    }
+    button {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+.loading-spinner {
+  width: 150px;
+  height: 150px;
+}
+
+.pw-forgotten-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  a {
+    color: #fbfef9;
+    text-decoration: none;
+    font-size: 2.3rem;
+    padding: 14px 20px;
+    &:hover {
+      color: #f3f5f1;
+      cursor: pointer;
+    }
+  }
+
+  .logo-and-name-container {
+    display: flex;
+    align-items: center;
+    a {
+      padding: 14px 8px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: var(--greyish-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--almost-white);
+  font-size: 1.5rem;
+}
+
+.swiper-container {
+  min-height: 500px;
+  width: 350px;
+  height: 500px;
+  padding: 0px;
+}
+
+//Override third party swiper compontents css with !important
+.swipe-card__container {
+  background-color: var(--greyish-black) !important;
+  border: 2px solid #fbfef950 !important;
+  filter: drop-shadow(2px 2px 20 px #261c15) !important;
+}
+.swipe-card__image-container {
+  height: 300px !important;
+}
+
+.main-container {
+  min-height: calc(100vh - 50px);
+}
+
+.footer-container {
+  footer {
+    bottom: 0;
+    padding: 20px;
+  }
+  @include xs {
+    text-align: center;
+    h2 {
+      font-size: 17px;
+    }
+  }
+}
+
+// Override bootstrap table colors (with other bootstrap colors)
+.table-dark {
+  --bs-table-bg: var(--bs-gray-700);
+  --bs-table-striped-bg: var(--bs-gray-800);
+  --bs-table-hover-bg: var(--btn-secondary-bs-btn-hover-bg);
+  --bs-table-border-color: transparent;
+
+  thead {
+    tr {
+      --bs-table-bg: var(--bs-dark);
+    }
+  }
+}
+
+// Override bootstrap navbar collapsible content (with another bootstrap color)
+.navbar-toggle-content {
+  background-color: var(--bs-gray-800) !important;
+
+  h2 {
+    text-align: left;
+  }
+}
+
+.navbar-toggler-icon {
+  width: 4em;
+  height: 4em;
+}
+
+.playlistview-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  margin: 2rem;
+  button {
+    margin-left: 2rem;
+    max-height: 10rem;
+    min-width: 10rem;
+    font-size: 2rem;
+  }
+}
+.goback-button {
+  font-size: 3rem;
+  margin: 20px;
+}
+
+.btn-share {
+  min-width: 140px;
+}
+
+.profile-image {
+  height: auto;
+  width: 100%;
+  max-height: 350px;
+  max-width: 350px;
+}

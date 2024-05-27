@@ -1,0 +1,37 @@
+// Phones
+@mixin xs {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+// Phone in landscape mode
+@mixin sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+// Tablet and small computers
+@mixin md {
+  @media (min-width: 768px) and (max-width: 979px) {
+    @content;
+  }
+}
+// large deskstop
+
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@media (min-width: 992px) { 
+  .ms-auto-lg {
+      margin-left: auto !important;
+  }
+}
+
+.d-none-xs {
+  @include xs {
+    display: none!important;
+  }
+}

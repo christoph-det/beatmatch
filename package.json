@@ -1,0 +1,26 @@
+{
+    "type": "module",
+    "scripts": {
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "4.2.0",
+        "vite": "^4.4.11"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.3",
+        "express": "^4.19.2",
+        "firebase": "^9.17.1",
+        "mobx": "^6.8.0",
+        "mobx-react-lite": "^3.4.2",
+        "react": "^18.0.0",
+        "react-card-swiper": "^1.1.25",
+        "react-dom": "^18.0.0",
+        "react-favicon": "^2.0.3",
+        "react-router-dom": "^6.8.1",
+        "sass": "^1.71.1"
+    }
+}

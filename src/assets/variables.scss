@@ -1,0 +1,18 @@
+:root {
+  --font-family: "Open Sans", sans-serif;
+  --text: #333;
+  --gray-light: #ddd;
+  --hint: #999;
+  --primary: #5C6340
+  --light: #949d6a;
+  --gray: #444;
+  --neon-green: #98ce00;
+  --shrek-green: #5fad56;
+  --royal-blue: #0c6291;
+  --sky-blue: #388697;
+  --greyish-black: #2f312e;
+  --almost-white: #e2e9dc;
+  --gradient: linear-gradient(to right, var(--primary), var(--light));
+  --gradient-reverse: linear-gradient(to left, var(--primary), var(--light));
+  --btn-secondary-bs-btn-hover-bg: #5c636a;
+}
